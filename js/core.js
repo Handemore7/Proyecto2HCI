@@ -4,11 +4,8 @@ Array.prototype.remove = function(el) {
 const InstrumentEnum = Object.freeze({
   BONGO: 0,
   KEYBOARD: 1,
-  MEOW: 3,
-  CYMBAL: 4,
   MARIMBA: 5,
   TAMBOURINE: 6,
-  COWBELL: 7
 })
 const KeyEnum = Object.freeze({
   "0": 0,
@@ -17,15 +14,15 @@ const KeyEnum = Object.freeze({
   "5": 5,
   "7": 7,
   "D": 1,
-  "F": 7,
-  "J": 1,
-  "K": 0,
+  "F": 3,
+  "J": 5,
+  "K": 7,
 })
 const InstrumentPerKeyEnum = Object.freeze({
   "D": InstrumentEnum.MARIMBA,
   "F": InstrumentEnum.MARIMBA,
-  "J": InstrumentEnum.BONGO,
-  "K": InstrumentEnum.BONGO,
+  "J": InstrumentEnum.MARIMBA,
+  "K": InstrumentEnum.MARIMBA,
 })
 const TapKeysPerLayerEnum = Object.freeze({
   "layer-bongo": ["tap-keys"],
