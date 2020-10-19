@@ -10,19 +10,27 @@ const InstrumentEnum = Object.freeze({
 const KeyEnum = Object.freeze({
   "0": 0,
   "1": 1,
+  "2": 2,
   "3": 3,
+  "4": 4,
   "5": 5,
+  "6": 6,
   "7": 7,
-  "D": 1,
+  "8": 8,
+  "S": 1,
+  "D": 2,
   "F": 3,
-  "J": 5,
-  "K": 7,
+  "J": 4,
+  "K": 5,
+  "L": 6,
 })
 const InstrumentPerKeyEnum = Object.freeze({
+  "S": InstrumentEnum.MARIMBA,
   "D": InstrumentEnum.MARIMBA,
   "F": InstrumentEnum.MARIMBA,
   "J": InstrumentEnum.MARIMBA,
   "K": InstrumentEnum.MARIMBA,
+  "L": InstrumentEnum.MARIMBA,
 })
 const TapKeysPerLayerEnum = Object.freeze({
   "layer-bongo": ["tap-keys"],
@@ -80,3 +88,8 @@ $(document).on("keydown keyup", function(e) {
     $.play(instrument, key, e.type === "keydown");
   }
 });
+
+//Logica de transición de pantallas
+
+
+//lvl2.addEventListener('click', GoToLevel2);
