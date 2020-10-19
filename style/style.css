@@ -32,10 +32,11 @@ header, footer {
 }
 
 
-
-
 .key {
-  display: block ;
+  top: 0px;
+  display: inline-block ;
+  align-items: space-between;
+  justify-content: center;
   min-width: 35px;
   height: 35px;
   padding: 4px 0 0 6px;

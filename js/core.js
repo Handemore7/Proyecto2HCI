@@ -25,16 +25,17 @@ const KeyEnum = Object.freeze({
   "L": 6,
 })
 const InstrumentPerKeyEnum = Object.freeze({
-  "S": InstrumentEnum.MARIMBA,
-  "D": InstrumentEnum.MARIMBA,
-  "F": InstrumentEnum.MARIMBA,
-  "J": InstrumentEnum.MARIMBA,
-  "K": InstrumentEnum.MARIMBA,
-  "L": InstrumentEnum.MARIMBA,
+  "S": InstrumentEnum.KEYBOARD,
+  "D": InstrumentEnum.KEYBOARD,
+  "F": InstrumentEnum.KEYBOARD,
+  "J": InstrumentEnum.KEYBOARD,
+  "K": InstrumentEnum.KEYBOARD,
+  "L": InstrumentEnum.KEYBOARD,
 })
 const TapKeysPerLayerEnum = Object.freeze({
   "layer-bongo": ["tap-keys"],
-  "layer-marimba": ["tap-keys"]
+  "layer-marimba": ["tap-keys"],
+  "layer-keyboard": ["tap-keys"]
 })
 var pressed = [];
 var currentLayer;
@@ -50,6 +51,7 @@ $(document).ready(function() {
   });
   $.load("bongo", 0, 1);
   $.load("marimba", 0, 9);
+  $.load("keyboard", 0, 9);
   $("select#select-instrument").on("change", function() {
     $.layers($(this).val());
   });
@@ -91,5 +93,14 @@ $(document).on("keydown keyup", function(e) {
 
 //Logica de transición de pantallas
 
-
-//lvl2.addEventListener('click', GoToLevel2);
+var lvl1 = document.querySelector('.GoTolvl1');
+var lvl2 = document.querySelector('.GoTolvl2');
+var test = document.querySelector('.mainContainer');
+console.log(lvl2);
+console.log(test);
+    var GoToLevel2 = function(event){
+      console.log("estoy en el lvl 2");
+        document.querySelector(".keyA").style.display='inline-block';
+        document.querySelector(".keyL").style.display='inline-block';
+    }
+    lvl2.addEventListener('click', GoToLevel2);
