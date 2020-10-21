@@ -102,5 +102,7 @@ console.log(test);
       console.log("estoy en el lvl 2");
         document.querySelector(".keyA").style.display='inline-block';
         document.querySelector(".keyL").style.display='inline-block';
+        document.querySelector(".keyJ").style.marginLeft='15%';
+        document.querySelector(".keyK").style.marginLeft='15%';
     }
     lvl2.addEventListener('click', GoToLevel2);

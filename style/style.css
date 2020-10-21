@@ -26,25 +26,28 @@ header, footer {
 }
 
 
-#keys>div {
-  display: inline-block;
-  padding: 0 8px
+.keyContainer{
+  width: 49%;
+  position: relative;
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
 }
 
-
 .key {
-  top: 0px;
-  display: inline-block ;
-  align-items: space-between;
-  justify-content: center;
+  display: flex;
+  position: relative;
+  right: 0px;
   min-width: 35px;
   height: 35px;
   padding: 4px 0 0 6px;
-  background: #f5f5f5;
-  border: 2px solid #b3b3b3;
+  background: #ffeca9;
+  border: 2px solid #CDC7C3;
   border-radius: 6px;
-  box-shadow: inset -6px -4px 0 0 #ccc;
+  box-shadow: inset -3px -2px 0 0 #ccc;
   text-align: left;
+  margin-left: 25%;
+  margin-right: 10%;
   font-size: 15px
 }
 
@@ -72,18 +75,18 @@ a{
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   body {
     background-color: #000 !important;
     color: #fff !important
   }
 
   .key {
-    background: #333;
-    border: 2px solid #252525;
+    background: #ffeca9;
+    border: 2px solid #CDC7C3;
     box-shadow: inset -6px -4px 0 0 #1b1b1b
   }
-}
+}*/
 
 
 @media only screen and (max-width: 769px) {
