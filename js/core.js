@@ -7,21 +7,41 @@ function addEvent(element, eventName, callback) {
       element["on" + eventName] = callback;
   }
 }
+var x = 50;
+var iniciarSecuencia = function(value) {
+    x -= 1;
+}
+
 addEvent(document, "keyup", function (e) {
   durationEnd=clock;
   touchkey();
 });
+window.setInterval(iniciarSecuencia,10);
 
-function addEvent(element, eventName, callback) {
-  if (element.addEventListener) {
-      element.addEventListener(eventName, callback, false);
-  } else if (element.attachEvent) {
-      element.attachEvent("on" + eventName, callback);
-  } else {
-      element["on" + eventName] = callback;
+
+document.getElementById("imgkeys1").style.bottom=x+"px";
+/*function pressEvent(keyPressed) {
+  if (keyPressed == S) {
+    
+  } 
+  if (keyPressed == D) {
+    
   }
+  if (keyPressed == F) {
+    
+  } 
+  if (keyPressed == J) {
+    
+  } 
+  if (keyPressed == K) {
+    
+  } 
+  if (keyPressed == L) {
+    
+  } 
 }
 
+pressEvent(keyPressed);*/
 
 //Contador de tiempo 
 
@@ -34,7 +54,7 @@ var commonKey = undefined;
 
 var touchkey = function(value){
   duration = durationEnd - durationBegin;
-  console.log("La letra: "+commonKey+" tocada en el segundo: "+clock +" durante "+ duration+" segundos");
+  console.log("La letra "+commonKey+" tocada en el milisegundo "+clock +" durante "+ duration+" milisegundos");
 }
 
 var Stopwatch = function(elem, options) {

@@ -26,6 +26,14 @@ header, footer {
   z-index: 500
 }
 
+#imgkeys1{
+  position: absolute;
+  overflow: hidden;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
 #keys{
   position: relative;
   top: 570px;

@@ -17,11 +17,12 @@
     <div class="container1" id="blur">
       
       <button class="GoTolvl2"> <a href="nivel2.html">Nivel 2</a> </button>
+      <img id="imgkeys1" src="./images/tutorial keys.png">
       <div id="keys">
         <div class="keyContainer">
           <span class="key keyA" style="display: none;">S</span>
-          <span class="key">D</span>
-          <span class="key">F</span>
+          <span class="key keyD">D</span>
+          <span class="key keyF">F</span>
         </div>
         <div class="keyContainer">
           <span class="key keyJ">J</span>
@@ -45,7 +46,9 @@
       var blur = document.getElementById('blur');
       blur.classList.toggle('active')
       var popup = document.getElementById('popup');
-      popup.classList.toggle('active')
+      popup.classList.toggle('active');
+      var audio = new Audio('./sounds/Tutorial.mp3');
+      audio.play();
     }
   </script>
   
