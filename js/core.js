@@ -246,4 +246,9 @@ var test = document.querySelector('.mainContainer');
     durationBegin=clock;
   });
   
+
+var resultados = function(p1, p2, e) {
+  var total=(p1*0,6)+(p2*0.2)+(20-(e*0,02));
+  console.log(total);
+}
   
