@@ -1,3 +1,120 @@
+function addEvent(element, eventName, callback) {
+  if (element.addEventListener) {
+      element.addEventListener(eventName, callback, false);
+  } else if (element.attachEvent) {
+      element.attachEvent("on" + eventName, callback);
+  } else {
+      element["on" + eventName] = callback;
+  }
+}
+addEvent(document, "keyup", function (e) {
+  durationEnd=clock;
+  touchkey();
+});
+
+function addEvent(element, eventName, callback) {
+  if (element.addEventListener) {
+      element.addEventListener(eventName, callback, false);
+  } else if (element.attachEvent) {
+      element.attachEvent("on" + eventName, callback);
+  } else {
+      element["on" + eventName] = callback;
+  }
+}
+
+
+//Contador de tiempo 
+
+var elem = document.getElementById("my-stopwatch");
+var clock = undefined;
+var durationBegin = undefined;
+var durationEnd = undefined;
+var duration = undefined;
+var commonKey = undefined;
+
+var touchkey = function(value){
+  duration = durationEnd - durationBegin;
+  console.log("La letra: "+commonKey+" tocada en el segundo: "+clock +" durante "+ duration+" segundos");
+}
+
+var Stopwatch = function(elem, options) {
+
+  var timer       = createTimer(),
+      startButton = createButton("start", start),
+      stopButton  = createButton("stop", stop),
+      resetButton = createButton("reset", reset),
+      offset,
+      interval;
+
+  // default options
+  options = options || {};
+  options.delay = options.delay || 1;
+
+  // initialize
+  reset();
+
+  // private functions
+  function createTimer() {
+    return document.createElement("span");
+  }
+
+  function createButton(action, handler) {
+    var a = document.createElement("a");
+    a.href = "#" + action;
+    a.innerHTML = action;
+    a.addEventListener("click", function(event) {
+      handler();
+      event.preventDefault();
+    });
+    return a;
+  }
+
+  function start() {
+    if (!interval) {
+      offset   = Date.now();
+      interval = setInterval(update, options.delay);
+    }
+  }
+
+  function stop() {
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
+  }
+
+  function reset() {
+    clock = 0;
+    render();
+  }
+
+  function update() {
+    clock += delta();
+    render();
+  }
+
+  function render() {
+    timer.innerHTML = clock/1000; 
+  }
+
+  function delta() {
+    var now = Date.now(),
+        d   = now - offset;
+
+    offset = now;
+    return d;
+  }
+
+  // public API
+  this.start  = start;
+  this.stop   = stop;
+  this.reset  = reset;
+};
+
+var timer = new Stopwatch(elem, {delay: 10});
+
+// Tocar los sonidos
+
 Array.prototype.remove = function(el) {
   return this.splice(this.indexOf(el), 1);
 }
@@ -71,19 +188,19 @@ $.wait = function(callback, ms) {
 }
 $.play = function(instrument, key, state) {
   var instrumentName = Object.keys(InstrumentEnum).find(k => InstrumentEnum[k] === instrument).toLowerCase();
-  var commonKey = KeyEnum[key];
+  commonKey = KeyEnum[key];
   if (state == true) {
     if (jQuery.inArray(commonKey, pressed) !== -1) {
       return;
     }
     lowLag.play(instrumentName + commonKey);
-    $.layers(Object.keys(LayersPerInstrumentEnum).find(k => LayersPerInstrumentEnum[k] == instrument), true);
+    timer.start();
   } else {
     pressed.remove(commonKey);
   }
-  $(id).css("background-position-x", (state ? "-800px" : "0"));
 }
 $(document).on("keydown keyup", function(e) {
+  
   var instrument = InstrumentPerKeyEnum[e.key.toUpperCase()];
   var key = KeyEnum[e.key.toUpperCase()];
   if (instrument != undefined && key != undefined) {
@@ -96,8 +213,6 @@ $(document).on("keydown keyup", function(e) {
 var lvl1 = document.querySelector('.GoTolvl1');
 var lvl2 = document.querySelector('.GoTolvl2');
 var test = document.querySelector('.mainContainer');
-console.log(lvl2);
-console.log(test);
     var GoToLevel2 = function(event){
       console.log("estoy en el lvl 2");
         document.querySelector(".keyA").style.display='inline-block';
@@ -105,4 +220,10 @@ console.log(test);
         document.querySelector(".keyJ").style.marginLeft='15%';
         document.querySelector(".keyK").style.marginLeft='15%';
     }
-    lvl2.addEventListener('click', GoToLevel2);
+  lvl2.addEventListener('click', GoToLevel2);
+
+  addEvent(document, "keydown", function (e) {
+    durationBegin=clock;
+  });
+  
+  

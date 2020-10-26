@@ -26,6 +26,10 @@ header, footer {
   z-index: 500
 }
 
+#keys{
+  position: relative;
+  top: 570px;
+}
 
 .keyContainer{
   width: 49%;
@@ -118,10 +122,6 @@ p{
   border-radius: 12px;
   box-shadow: 2px 2px 2px rgb(156, 156, 156);
   cursor: pointer;
-}
-a{
-  
-  
 }
 
 /*@media (prefers-color-scheme: dark) {
