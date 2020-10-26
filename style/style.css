@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap');
 
 html, body {
   overflow-x: hidden;
@@ -52,17 +54,62 @@ header, footer {
 }
 
 
-.mainContainer{
+.mainContainer_inicio{
   width: 100%;
   height: 100%;
   background-image: url(../images/inicio.png);
   background-repeat: no-repeat;
 }
+.mainContainer_tutorial{
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/tutorial.png);
+  background-repeat: no-repeat;
+}
+.container1{
+  filter: blur(10px);
+}
+.container1#blur.active{
+  filter: blur(0px);
+}
+.start1{
+  cursor: pointer;
+}
+#popup{
+  position: fixed;
+  width: 430px;
+  height: 214px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #8F9BFF;
+  color: #fff;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 2px 2px 2px rgb(156, 156, 156);
+  cursor: pointer;
+}
+h1{
+ margin: 0%;
+ font-family: 'Nunito Sans', sans-serif;
+ font-size: 50px;
+}
+p{
+  margin: 0%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 24px;
+}
+#popup.active{
+  top: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
 .start{
   width: 252px;
   height: 84px;
   margin-top: 530px;
-  margin-left: 38%;
+  margin-left: 36%;
   background-color: #8F9BFF;
   color: #fff;
   border-style: none;
