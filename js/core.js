@@ -7,19 +7,23 @@ function addEvent(element, eventName, callback) {
       element["on" + eventName] = callback;
   }
 }
-var x = 50;
+var x = -500;
 var iniciarSecuencia = function(value) {
+  if(x > -1800){
     x -= 1;
+    document.getElementById("imgkeys1").style.bottom=x+"px";
+  }
+    
 }
 
 addEvent(document, "keyup", function (e) {
   durationEnd=clock;
   touchkey();
+  
 });
-window.setInterval(iniciarSecuencia,10);
+//window.setInterval(iniciarSecuencia,20);
 
 
-document.getElementById("imgkeys1").style.bottom=x+"px";
 /*function pressEvent(keyPressed) {
   if (keyPressed == S) {
     
