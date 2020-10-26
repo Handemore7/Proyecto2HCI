@@ -9,9 +9,9 @@ function addEvent(element, eventName, callback) {
 }
 var x = -500;
 var iniciarSecuencia = function(value) {
-  if(x > -1800){
+  if(x > -4000){
     x -= 1;
-    document.getElementById("imgkeys1").style.bottom=x+"px";
+    document.getElementById("imgkeys1").style.bottom=x+"px";    
   }
     
 }
