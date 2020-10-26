@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto HCI</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="./style/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/lowLag.js"></script>
+  <script src="./js/sm2/js/soundmanager2-nodebug-jsmin.js"></script>
+  
+</head>
+
+<body>
+  <header>
+    <div class="container1" id="blur">
+      
+      <button class="GoTolvl2"> <a href="nivel2.html">Nivel 2</a> </button>
+      <div id="keys">
+        <div class="keyContainer">
+          <span class="key keyA" style="display: none;">S</span>
+          <span class="key">D</span>
+          <span class="key">F</span>
+        </div>
+        <div class="keyContainer">
+          <span class="key keyJ">J</span>
+          <span class="key keyK">K</span>
+          <span class="key keyL" style="display: none;">L</span>
+        </div>
+      </div>
+    </div>
+    <button id="popup" onclick="toggle()">
+        <h1>1 NIVEL</h1>
+        <p>Memoriza el ritmo</p>
+      </button>
+    </div>
+  </header>
+  
+  <footer>
+  </footer>
+  <script>
+    function toggle(){
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active')
+      var popup = document.getElementById('popup');
+      popup.classList.toggle('active')
+    }
+  </script>
+  
+</body>
+  <script src="./js/core.js"></script>
+  <script src="./js/main.js"></script>
+</html>
